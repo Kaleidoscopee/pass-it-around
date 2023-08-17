@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3000; //windows 5000 for mac users
-const drinks = "beer"
 
 
 
@@ -11,7 +10,19 @@ app.get("/", (req, res)=>{
     `);
 });
 
+app.get("/:number_of_bottles", (req, res)=>{
+    let bottlesNumber=req.params.number_of_bottles;
+    let page = "";
 
+    bottlesNumber != 0
+        ?(page=`<a href="http://localhost:3000/${bottlesNumber-1}">Take one down,pass it around.</a>`)
+        :(page=`<a href="http://localhost:3000/>Start Over</a>`);
+
+    
+    res.send(`<h1>${bottlesNumber} Bottles of beer on the wall.</h1>
+    ${page}
+    `)
+})
 
 
 
