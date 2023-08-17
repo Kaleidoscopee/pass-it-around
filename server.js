@@ -5,18 +5,48 @@ const drinks = "beer"
 
 
 
-app.get('/get/:number_of_bottles', (req, res)=> {
-    const bottles = req.params.number_of_bottles;
-    const response = (=>(i = bottles, i< bottles, i--));
-
-    res.send(`
-        <h1>${bottles} of bottles of ${drinks} on the wall!</h1>
-        <h1>${bottles} bottles of ${drinks}!</h1>
-        <h1>Take one down, pass it around!</h1>
-        <h1>${bottles} bottles of ${drinks} on the wall!</h1>
-        <br />
-    `)
+app.get("/", (req, res)=>{
+    res.send(`<h1>99 Bottles of beer on the wall</h1>
+    <a href="http://localhost:300/98">Take one down, pass it around.</a>
+    `);
 });
+
+
+
+
+
+
+// app.get('/:number_of_bottles', (req, res)=> {
+//     let bottlesNumber = req.params.number_of_bottles;
+//         res.send(`
+//         <h1>${bottlesNumber} of bottles of ${drinks} on the wall!</h1>
+//         <h1>${bottlesNumber} bottles of ${drinks}!</h1>
+//     `)
+//     }
+
+//     app.get('/:number_of_bottles', (req, res)=> {
+//         let bottlesNumber = req.params.number_of_bottles;
+//         let number
+//             res.send(`
+//             <h1>${bottlesNumber} of bottles of ${drinks} on the wall!</h1>
+//             <h1>${bottlesNumber} bottles of ${drinks}!</h1>
+//         `)
+//         }
+
+
+
+
+    // (function () {
+    //     res.send(`
+    //     <h1>${bottlesNumber} of bottles of ${drinks} on the wall!</h1>
+    //     <h1>${bottlesNumber} bottles of ${drinks}!</h1>
+    //     <h1>Take one down, pass it around!</h1>
+    //     <h1>${bottlesNumber} bottles of ${drinks} on the wall!</h1>
+    //     <br />
+    // `)
+    // });
+
+
 
 
 
